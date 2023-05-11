@@ -1,0 +1,52 @@
+@import "config";
+
+body{
+    background-color: $light-color;
+    font-family: $font-stack;
+    line-height: 1.6em;
+}
+#showcase{
+    @include set-background($light-color);
+    height: 600px;
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        ul{
+            display: flex;
+            list-style: none;
+        }
+
+        li{
+            padding: 15px;
+
+            a:hover{
+                transition-duration: 0.5s;
+                color: $secondary-colot;
+            }
+        }
+    }
+    
+    &-container{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            max-width: 50vw;
+        }
+    }
+}
+a{
+    text-decoration: none;
+}
+
+
+
+
+@import "utilites";
+@import "buttons";
+@import "mobile";

@@ -1,0 +1,37 @@
+@use "sass:color";
+
+$font-stack: Arial, Halvatica, sansd-serif;
+$light-color: #ff8e8e;
+$primary-color: #ffcc41;
+$secondary-colot: #d65649;
+
+@function set-text-color($color){
+    @if (color.lightness($color)>50%) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
+
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color);
+}
+
+
+$spaceamounts: (1,2,3,4,5);
+
+@each $space in $spaceamounts {
+    #m-#{$space} {
+        margin: #{$space}rem;
+    }
+    #my-#{$space} {
+        margin: #{$space}rem 0;
+    }
+    #p-#{$space} {
+        padding: #{$space}rem;
+    }
+    #py-#{$space} {
+        padding: #{$space}rem 0;
+    }
+}
